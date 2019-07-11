@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Switcher de couleurs</title>
+
+    <link rel="stylesheet" href="./css/style.css" type="text/css" title="Style classique" />
+    <link rel="alternate stylesheet" href="./css/style-high-contrast.css" type="text/css" title="Style avec contrastes conformes" />
+</head>
+<body>
+
+    <header role="banner" class="site-header">
+        <div class="block-content">
+            <h1>Exemples de <i lang="en">switcher</i> de couleurs</h1>
+
+            <p>Exemple 1 : <button type="button" hidden="hidden" class="btn btn-contrast btn-contrast-pressed" aria-pressed="false">Contrastes</button></p>
+            <p>Exemple 2 : <button type="button" hidden="hidden" class="btn btn-contrast" data-pressed="false" data-alternatetext="Contrastes par défaut">Contrastes renforcés</button></p>
+        </div>
+    </header>
+
+    <main role="main" class="site-main">
+        <div class="block-content">
+            <p>Cette page est juste un exemple de <i lang="en">switcher</i> de couleurs.</p>
+            <p><strong>Note :</strong> Les deux exemples ne sont pas synchronisés car on ne doit en utiliser qu'un seul dans un site web.</p>
+            <p>Pour en savoir plus, lire l'article complet à ce sujet sur le blog de Tanaguru : « <a href="https://www.tanaguru.com/fr/contrastes-couleurs-mecanisme-amelioration/">Contrastes de couleurs de texte (partie 3) : le mécanisme d’amélioration des contrastes</a> »</p>
+
+            <h2>Possibilités d'implémentations accessibles :</h2>
+            <ul>
+                <li>Boutons <i lang="en">toggle</i> / <i lang="en">switch</i> avec :
+                    <ul>
+                        <li>soit <strong><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-pressed" hreflang="en"><code>aria-pressed</code></a> (exemple 1 de cette page)</strong> ;</li>
+                        <li>soit <strong>changement de nom du bouton (exemple 2 de cette page)</strong>.</li>
+                    </ul>
+                </li>
+                <li><a href="https://scottaohara.github.io/aria-switch-button/" hreflang="en">ARIA Switch</a> ;</li>
+                <li><a href="https://www.sarasoueidan.com/blog/toggle-switch-design/" hreflang="en">Champs radio</a> ;</li>
+                <li>Deux boutons côte-à-côte avec indication sur leur état (actif ou inactif).</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer role="contentinfo" class="site-footer">
+        <div class="block-content">
+            <p>Réalisé chez <a href="https://www.tanaguru.com">Tanaguru</a> et disponible sur <a href="https://github.com/Tanaguru/contrast-switcher">Github</a></p>
+            <p>Icône réalisée par <a href="http://www.freepik.com" hreflang="en">Freepik</a> sur <a href="https://www.flaticon.com/free-icon/contrast-icon_61410" hreflang="en">flaticon.com</a> sous licence <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" hreflang="en">CC 3.0 BY</a></p>
+        </div>
+    </footer>
+
+    <script src="./js/contrast-switcher.js"></script>
+    <script src="./js/contrast-switcher-toggle-buttons.js"></script>
+</body>
+</html>

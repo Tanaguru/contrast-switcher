@@ -1,0 +1,26 @@
+/**
+ * Typography
+ */
+
+html {
+    font-size: 62.5%;
+    font-size: calc(1em * 0.625);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $bg-color-main;
+    color: $color-text;
+    font-family: Arial, sans-serif;
+    font-size: 1.9rem;
+    line-height: 1.5;
+}
+
+h1 {
+    color: $color-title;
+}
+
+a {
+    color: $color-link;
+}

@@ -1,0 +1,15 @@
+/**
+ * High contrast stylesheet
+ */
+
+// Import abstracts
+@import "abstracts/variables-identity-colors-high-contrast";
+
+// Import base
+@import "base/all-base";
+
+// Import layout
+@import "layout/all-layout";
+
+// Import components
+@import "components/all-components";
