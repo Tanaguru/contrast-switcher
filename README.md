@@ -1,7 +1,8 @@
 # <i>Switcher</i> de couleurs pour une version contrastée
 Mini-site exemple pour un <i>switcher</i> de couleurs (commutateur de style), mécanisme permettant d'obtenir des couleurs suffisamment contrastées pour respecter les règles d'accessibilité et permettre à tout le monde de lire le contenu.
 
-Lire l'article complet à ce sujet sur le blog de Tanaguru : « [Contrastes de couleurs de texte (partie 3) : le mécanisme d’amélioration des contrastes](https://www.tanaguru.com/fr/contrastes-couleurs-mecanisme-amelioration/) »
+- Lire l'article complet à ce sujet sur le blog de Tanaguru : « [Contrastes de couleurs de texte (partie 3) : le mécanisme d’amélioration des contrastes](https://www.tanaguru.com/fr/contrastes-couleurs-mecanisme-amelioration/) »
+- Page de [démonstration de deux exemples de mécanisme d’amélioration des contrastes de couleurs](http://demo-contrast-switcher.tanaguru.com/)
 
 # Lancer le projet
 Synchroniser en amont le dossier avec Git

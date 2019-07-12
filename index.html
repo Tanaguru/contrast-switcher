@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Switcher de couleurs</title>
+    <title>Le mécanisme d’amélioration des contrastes de couleurs : démonstration</title>
+    <meta name="description" content="Démonstration de deux exemples de switcher de couleurs pour illustrer un article de Tanaguru sur le mécanisme d’amélioration des contrastes">
+    <meta name="robots" content="noindex">
 
     <link rel="stylesheet" href="./css/style.css" type="text/css" title="Style classique" />
     <link rel="alternate stylesheet" href="./css/style-high-contrast.css" type="text/css" title="Style avec contrastes conformes" />
@@ -13,20 +15,55 @@
 
     <header role="banner" class="site-header">
         <div class="block-content">
-            <h1>Exemples de <i lang="en">switcher</i> de couleurs</h1>
+            <h1>Le mécanisme d’amélioration des contrastes de couleurs : démonstration</h1>
 
-            <p>Exemple 1 : <button type="button" hidden="hidden" class="btn btn-contrast btn-contrast-pressed" aria-pressed="false">Contrastes</button></p>
+            <p>Exemple 1 : <button type="button" hidden="hidden" class="btn btn-contrast btn-contrast-pressed" aria-pressed="false">Contrastes renforcés</button></p>
             <p>Exemple 2 : <button type="button" hidden="hidden" class="btn btn-contrast" data-pressed="false" data-alternatetext="Contrastes par défaut">Contrastes renforcés</button></p>
         </div>
     </header>
 
     <main role="main" class="site-main">
         <div class="block-content">
-            <p>Cette page est juste un exemple de <i lang="en">switcher</i> de couleurs.</p>
-            <p><strong>Note :</strong> Les deux exemples ne sont pas synchronisés car on ne doit en utiliser qu'un seul dans un site web.</p>
-            <p>Pour en savoir plus, lire l'article complet à ce sujet sur le blog de Tanaguru : « <a href="https://www.tanaguru.com/fr/contrastes-couleurs-mecanisme-amelioration/">Contrastes de couleurs de texte (partie 3) : le mécanisme d’amélioration des contrastes</a> »</p>
+            <p>Cette page présente une démonstration de deux exemples de mécanisme d’amélioration des contrastes ou <i lang="en">switchers</i> de couleurs.</p>
+            <p><strong>Note :</strong> Les deux exemples ne sont pas synchronisés car on ne doit en utiliser qu’un seul dans un site web.</p>
+            <p>Pour en savoir plus, nous vous invitons à lire l’article complet à ce sujet sur le blog de Tanaguru : « <a href="https://www.tanaguru.com/fr/contrastes-couleurs-mecanisme-amelioration/">Contrastes de couleurs de texte (partie 3) : le mécanisme d’amélioration des contrastes</a> »</p>
 
-            <h2>Possibilités d'implémentations accessibles :</h2>
+            <h2>Explication des deux exemples :</h2>
+            <h3>Exemple 1 : bouton-poussoir avec <code>aria-pressed</code></h3>
+            <p>Voici le détail de l’implémentation de l’exemple 1 :</p>
+            <ul>
+                <li>Il s’agit d’un vrai bouton HTML <code>&lt;button type="button"&gt;&lt;/button&gt;</code> ;</li>
+                <li>Le bouton est donc activable avec la touche <kbd>Espace</kbd> ou <kbd>Entrée</kbd> du clavier ;</li>
+                <li>Le bouton a toujours le même nom, peu importe son état. « Contrastes renforcés » est un nom explicite ;</li>
+                <li>Son changement d’état est indiqué via :
+                    <ul>
+                        <li>Le changement de valeur de l’attribut <code>aria-pressed</code> présent sur le bouton afin d’assurer la compatibilité avec les technologies d’assistance :
+                            <ul>
+                                <li><code>aria-pressed="false"</code> si on a le choix par défaut de la fonctionnalité (le lecteur d’écran dira que le bouton est « non-enfoncé ») ;</li>
+                                <li><code>aria-pressed="true"</code> si on a la version secondaire de la fonctionnalité, le bouton est appuyé et le reste (le lecteur d’écran dira que le bouton est « enfoncé ») ;</li>
+                            </ul>
+                        </li>
+                        <li>Le changement de style appliqué visuellement. Ici, il s’agit d’un style de bouton enfoncé ou non-enfoncé.</li>
+                    </ul>
+                </li>
+                <li><strong>Note :</strong> Le changement d’état, visuellement, n’est pas forcément très explicite. C’est le défaut de cette technique.</li>
+            </ul>
+
+            <h3>Exemple 2 : bouton avec changement de nom (sans WAI-ARIA)</h3>
+            <p>Voici le détail de l’implémentation de l’exemple 2 :</p>
+            <ul>
+                <li>Il s’agit d’un vrai bouton HTML <code>&lt;button type="button"&gt;&lt;/button&gt;</code> ;</li>
+                <li>Le bouton est donc activable avec la touche <kbd>Espace</kbd> ou <kbd>Entrée</kbd> du clavier ;</li>
+                <li>Le bouton change de nom selon son état. Le nom du bouton indique l’action qu’il produit :
+                    <ul>
+                        <li>« Contrastes renforcés » : il permet d’appliquer des styles pour avoir des contrastes renforcés ;</li>
+                        <li>« Contrastes par défaut » : il permet de réappliquer les styles par défaut.</li>
+                    </ul>
+                </li>
+                <li>Le nom du bouton est changé dynamiquement via JavaScript. On évitera d’avoir les deux noms de boutons dans la balise <code>&lt;button type="button"&gt;&lt;/button&gt;</code> avec l’un des deux masqué via <code>display: none;</code> car, en cas de désactivation des styles CSS, le nom du bouton ne sera pas pertinent.</li>
+            </ul>
+
+            <h2>Possibilités d’implémentations accessibles :</h2>
             <ul>
                 <li>Boutons <i lang="en">toggle</i> / <i lang="en">switch</i> avec :
                     <ul>
