@@ -3,14 +3,11 @@
  *
  * Script by Romain Gervois (Tanaguru)
  *
- * To do:
- * - Don't use the raw text values to find the stylesheet
- * - There is a bug with Safari and the cookie: it doesn't accept accented letters inside the "title" attribute of <link />
  */
 
 window.addEventListener('load', function(event) {
 	var contrastedversion = false;
-	if (getActiveStyleSheet() == 'Style avec contrastes conformes') {
+	if (getActiveStyleSheet() == 'high-contrast-css') {
 		contrastedversion = true;
 	}
 	var contrastbuttons = document.querySelectorAll('.btn-contrast');
@@ -30,12 +27,12 @@ window.addEventListener('load', function(event) {
 		// Toggle button (HTML or ARIA)
 		contrastbuttons[i].addEventListener('click', function(event) {
 			var attribute = this.getAttributeNode('aria-pressed') || this.getAttributeNode('data-pressed');
+
 			this.setAttribute(attribute.name, attribute.value == 'true' ? 'false' : 'true');
 			if (this.getAttribute(attribute.name) == 'true') {
-				setActiveStyleSheet('Style avec contrastes conformes');
-			}
-			else {
-				setActiveStyleSheet('Style classique');
+				setActiveStyleSheet('high-contrast-css');
+			} else {
+				setActiveStyleSheet('default-css');
 			}
 			if (this.dataset.alternatetext) {
 				var currenttext = this.textContent;
