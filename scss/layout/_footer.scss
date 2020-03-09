@@ -4,7 +4,11 @@
 
 .site-footer {
     background-color: $bg-color-footer;
+    margin-top: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     color: $color-footer;
+    font-size: 0.8em;
 
     a {
         color: inherit;

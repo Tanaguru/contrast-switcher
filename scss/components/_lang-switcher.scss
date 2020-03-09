@@ -1,0 +1,19 @@
+/**
+ * Lang switcher
+ */
+
+.lang-switcher {
+    background-color: $bg-color-lang;
+    color: $color-lang;
+    font-size: 0.75em;
+    text-align: right;
+}
+
+.lang-switcher-list {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.lang-switcher-link {
+    color: inherit;
+}

@@ -6,10 +6,12 @@ $color-text: #888888;
 $color-title: #EF362C;
 $color-link: #73A3B8;
 $color-button: #FFFFFF;
+$color-lang: $color-text;
 $color-footer: $color-text;
 
 $bg-color-main: #F6F6F6;
 $bg-color-header: #FFFFFF;
+$bg-color-lang: #444444;
 $bg-color-footer: #444444;
 $bg-button: $color-link;
 $bg-button-contrast: #0C7BAB; // The colors of contrast mode buttons must be compliant with the 4.5:1 ratio contrast rule by default.

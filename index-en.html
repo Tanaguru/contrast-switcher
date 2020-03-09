@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The contrast improvement mechanism: demonstration</title>
+    <meta name="description" content="Demonstration of two examples of colours switcher to accompany an article by Tanaguru on the contrast improvement mechanism.">
+    <meta name="robots" content="noindex">
+    <link rel="alternate" href="./" hreflang="fr">
+
+    <link rel="stylesheet" id="default-css" href="./css/style.css" type="text/css" title="Default styles" />
+    <link rel="alternate stylesheet" id="high-contrast-css" href="./css/style-high-contrast.css" type="text/css" title="High contrast styles" />
+</head>
+<body>
+
+    <header role="banner" class="site-header">
+        <div class="lang-switcher">
+            <div class="block-content">
+                <p class="lang-switcher-list"><a href="./" lang="fr" hreflang="fr" class="lang-switcher-link">Version française</a></p>
+            </div>
+        </div>
+        <div class="block-content">
+            <h1>The contrast improvement mechanism: demonstration</h1>
+
+            <p>Example 1: <button type="button" hidden="hidden" class="btn btn-contrast btn-contrast-pressed" aria-pressed="false">High contrast</button></p>
+            <p>Example 2: <button type="button" hidden="hidden" class="btn btn-contrast" data-pressed="false" data-alternatetext="Default contrast">High contrast</button></p>
+        </div>
+    </header>
+
+    <main role="main" class="site-main">
+        <div class="block-content">
+            <p>This page presents a demonstration of two examples of a contrast improvement mechanism also called a colour switcher.</p>
+            <p><strong>Note:</strong> Both examples are not synchronized because only one of them should be used in a website.</p>
+            <p>For more information, we invite you to read the full article on this subject on Tanaguru's blog: “<a href="https://www.tanaguru.com/en/contrast-improvement-mechanism/">Text Colour contrasts (Part 3): the contrast improvement mechanism</a>”</p>
+
+            <h2>Explanation of the two examples:</h2>
+            <h3>Example 1: push-button switch with <code>aria-pressed</code></h3>
+            <p>Here is the detailed implementation of example 1:</p>
+            <ul>
+                <li>This is a real HTML button <code>&lt;button type="button"&gt;&lt;/button&gt;</code>;</li>
+                <li>The button can therefore be activated with the <kbd>Space bar</kbd> or <kbd>Enter</kbd> key on the keyboard;</li>
+                <li>The button always has the same name, no matter what its state is. “High Contrast” is an explicit name;</li>
+                <li>Its change of status is indicated via:
+                    <ul>
+                        <li>The change of the value of the <code>aria-pressed</code> attribute on the button to ensure compatibility with assistive technologies:
+                            <ul>
+                                <li><code>aria-pressed="false"</code> if you have the default choice of the feature (screen reader will say that the button is “not pressed”);</li>
+                                <li><code>aria-pressed="true"</code> if you have the secondary version of the feature, the button is pressed and stay pressed (screen reader will say that the button is “pressed”);</li>
+                            </ul>
+                        </li>
+                        <li>The style modification visually applied. Here, it is a pressed or not pressed button style.</li>
+                    </ul>
+                </li>
+                <li><strong>Note:</strong> The visual change of state is not really explicit. This is the flaw in this technique.</li>
+            </ul>
+
+            <h3>Example 2: button with name change (without WAI-ARIA)</h3>
+            <p>Here is the detailed implementation of example 2:</p>
+            <ul>
+                <li>This is a real HTML button <code>&lt;button type="button"&gt;&lt;/button&gt;</code>;</li>
+                <li>The button can therefore be activated with the <kbd>Space bar</kbd> or <kbd>Enter</kbd> key on the keyboard;</li>
+                <li>The button changes its name according to its state. The name of the button indicates the action it produces:
+                    <ul>
+                        <li>“High contrast”: it applies high contrast styles;</li>
+                        <li>“Default contrast”: it applies default styles.</li>
+                    </ul>
+                </li>
+                <li>The button name is dynamically changed via JavaScript. We will avoid having both button names in the tag <code>&lt;button type="button"&gt;&lt;/button&gt;</code> with one of them hidden via <code>display: none;</code> because, in case of deactivation of CSS styles, the button name will not be relevant.</li>
+            </ul>
+
+            <h2>Possibilities to make accessible implementations:</h2>
+            <ul>
+                <li>Toggle buttons / switch with:
+                    <ul>
+                        <li>either <strong><a href="https://www.w3.org/TR/wai-aria-1.1/#aria-pressed"><code>aria-pressed</code></a> (example 1 on this page)</strong>;</li>
+                        <li>or <strong>button with name change (example 2 on this page)</strong>.</li>
+                    </ul>
+                </li>
+                <li><a href="https://scottaohara.github.io/aria-switch-button/">ARIA Switch</a>;</li>
+                <li><a href="https://www.sarasoueidan.com/blog/toggle-switch-design/">Radio fields</a>;</li>
+                <li>Two side-by-side buttons with indication of their state (active or inactive).</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer role="contentinfo" class="site-footer">
+        <div class="block-content">
+            <p>Made by <a href="https://www.tanaguru.com">Tanaguru</a> and available on <a href="https://github.com/Tanaguru/contrast-switcher">Github</a></p>
+            <p>Icon by <a href="http://www.freepik.com">Freepik</a> on <a href="https://www.flaticon.com/free-icon/contrast-icon_61410">flaticon.com</a> under <a href="http://creativecommons.org/licenses/by/3.0/">CC 3.0 BY</a> license</p>
+        </div>
+    </footer>
+
+    <script src="./js/contrast-switcher.js"></script>
+    <script src="./js/contrast-switcher-toggle-buttons.js"></script>
+</body>
+</html>
